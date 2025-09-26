@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Cors</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+<body>
+    <input id="a" type="text" placeholder="Enter a">
+    <input id="b" type="text" placeholder="Enter b">
+    <button onclick="getSum()"> Calculate Sum </button>
+    <div id="result"></div>
+</body>
+
+<script> 
+    async function getSum(){
+        await axios.post("http://localhost:3000/sum",{
+            a:document.getElementById('a').value,
+            b:document.getElementById('b').value
+        })
+    }
+
+    const response = document.getElementById('result').innerHTML = res.data.sum
+</script>
+</html>

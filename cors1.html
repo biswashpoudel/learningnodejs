@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a" placeholder="Enter a">
+    <input type="text" id="b" placeholder="Enter b">
+
+    <button onclick="sendRequest()"> Calculate Sum</button>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+<script>
+
+async function sendRequest(){
+    await axios.post('http://localhost:3001/sum', {
+        a: document.getElementById('a').value,
+        b: document.getElementById('b').value
+    })
+}
+</script>
+
+</html>
