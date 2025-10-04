@@ -8,6 +8,9 @@ app.use(express.json());
 
 let users=[]; //creating a in memory variable 
 
+app.get('/', function(req,res){
+    res.sendFile(__dirname + '/frontend.html')
+})
 app.post('/signup', function(req,res){
     const username = req.body.username
     const password = req.body.password
